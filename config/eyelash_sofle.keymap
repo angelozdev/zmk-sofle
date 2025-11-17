@@ -56,14 +56,6 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-
-        /* CAPS WORD: Bloq Mayús Inteligente para CONSTANTES_DE_CODIGO */
-        /* Se desactiva automáticamente al presionar Space, Enter o Esc */
-        caps_word: caps_word {
-            compatible = "zmk,behavior-caps-word";
-            #binding-cells = <0>;
-            continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
-        };
     };
 
     combos {
@@ -80,7 +72,7 @@
 
         /* CAPA 0: BASE (QWERTY con Home Row Mods) */
         /* Home Row: A/S/D/F (Gui/Alt/Ctrl/Shift) y J/K/L/; (Shift/Ctrl/Alt/Gui) */
-        /* Pulgares: caps_word, modificadores, layer toggles, SPACE/ENTER/BSPC/DEL, K_APP */
+        /* Pulgares: ESC, modificadores, layer toggles, SPACE/ENTER/BSPC/DEL, K_APP */
         /* Columna Central: Multimedia y navegación rápida */
         default_layer {
             label = "BASE";
@@ -89,7 +81,7 @@
 &kp TAB     &kp Q        &kp W        &kp E          &kp R         &kp T        &kp C_VOL_UP    &kp Y   &kp U         &kp I          &kp O        &kp P          &kp BSLH
 &trans      &hm LGUI A   &hm LALT S   &hm LCTRL D    &hm LSHFT F   &kp G        &kp C_VOL_DN    &kp H   &hm RSHFT J   &hm RCTRL K    &hm LALT L   &hm LGUI SEMI  &kp SQT
 &trans      &kp Z        &kp X        &kp C          &kp V         &kp B        &kp C_PP        &kp N   &kp M         &kp COMMA      &kp DOT      &kp FSLH       &trans
-&caps_word  &kp LCTRL    &kp LALT     &kp LGUI       &mo NAV       &kp SPACE    &kp PG_UP       &kp RET &kp BSPC      &mo SYM        &kp DEL      &kp RALT       &kp K_APP
+&kp ESC     &kp LCTRL    &kp LALT     &kp LGUI       &mo NAV       &kp SPACE    &kp PG_UP       &kp RET &kp BSPC      &mo SYM        &kp DEL      &kp RALT       &kp K_APP
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             display-name = "BASE";
