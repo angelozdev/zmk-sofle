@@ -20,7 +20,7 @@ layers:
   - E
   - R
   - T
-  - $$mdi:skip-previous$$
+  - $$mdi:volume-low$$
   - Y
   - U
   - I
@@ -33,7 +33,7 @@ layers:
   - {t: D, s: '$$mdi:apple-keyboard-control$$'}
   - {t: F, s: '$$mdi:apple-keyboard-shift$$'}
   - G
-  - $$mdi:play-pause$$
+  - $$mdi:skip-previous$$
   - H
   - {t: J, s: '$$mdi:apple-keyboard-shift$$'}
   - {t: K, s: '$$mdi:apple-keyboard-control$$'}
@@ -59,7 +59,7 @@ layers:
   - LGUI
   - NAV
   - $$mdi:keyboard-space$$
-  - $$mdi:volume-low$$
+  - $$mdi:play-pause$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:backspace$$', type: backspace}
   - SYM
