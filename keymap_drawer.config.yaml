@@ -137,24 +137,51 @@ parse_config:
     "&hm LEFT_GUI A":
       tap: 'A'
       shifted: $$mdi:apple-keyboard-command$$
+    "&hm LGUI A":
+      tap: 'A'
+      shifted: $$mdi:apple-keyboard-command$$
     "&hm LEFT_ALT S":
+      tap: 'S'
+      shifted: $$mdi:apple-keyboard-option$$
+    "&hm LALT S":
       tap: 'S'
       shifted: $$mdi:apple-keyboard-option$$
     "&hm LEFT_CONTROL D":
       tap: 'D'
       shifted: $$mdi:apple-keyboard-control$$
+    "&hm LCTRL D":
+      tap: 'D'
+      shifted: $$mdi:apple-keyboard-control$$
     "&hm LEFT_SHIFT F":
+      tap: 'F'
+      shifted: $$mdi:apple-keyboard-shift$$
+    "&hm LSHFT F":
       tap: 'F'
       shifted: $$mdi:apple-keyboard-shift$$
     "&hm RIGHT_SHIFT J":
       tap: 'J'
       shifted: $$mdi:apple-keyboard-shift$$
+    "&hm RSHFT J":
+      tap: 'J'
+      shifted: $$mdi:apple-keyboard-shift$$
     "&hm RIGHT_CONTROL K":
       tap: 'K'
       shifted: $$mdi:apple-keyboard-control$$
-    "&hm RIGHT_ALT L":
+    "&hm RCTRL K":
+      tap: 'K'
+      shifted: $$mdi:apple-keyboard-control$$
+    "&hm LEFT_ALT L":
       tap: 'L'
       shifted: $$mdi:apple-keyboard-option$$
+    "&hm LALT L":
+      tap: 'L'
+      shifted: $$mdi:apple-keyboard-option$$
+    "&hm LEFT_GUI SEMI":
+      tap: ';'
+      shifted: $$mdi:apple-keyboard-command$$
+    "&hm LGUI SEMI":
+      tap: ';'
+      shifted: $$mdi:apple-keyboard-command$$
     # self behaviors
     "&hm LG(LS(V)) P":
       tap: 'P'
@@ -257,6 +284,13 @@ parse_config:
 
   # ZMK
   zmk_keycode_map:
+    # Application keys
+    K_APP: $$mdi:menu$$
+    K_APPLICATION: $$mdi:menu$$
+
+    # Caps Word (already defined in raw_binding_map but adding for consistency)
+    CAPS_WORD: $$mdi:alpha-w-box$$
+
     # Symbols
     EXCLAMATION: "!"
     EXCL: "!"
@@ -420,7 +454,13 @@ parse_config:
     PAGE_UP:
       tap: 'PgUp'
       shifted: ''
+    PG_UP:
+      tap: 'PgUp'
+      shifted: ''
     PAGE_DOWN:
+      tap: 'PgDn'
+      shifted: ''
+    PG_DN:
       tap: 'PgDn'
       shifted: ''
     INSERT:

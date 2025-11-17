@@ -13,6 +13,11 @@ jobs:
     permissions:
       contents: write
     with:
-      commit_message: "[Draw] ${{ github.event.head_commit.message }}"
+      keymap_patterns: "config/*.keymap"
+      config_path: "keymap_drawer.config.yaml"
+      output_folder: "keymap-drawer"
+      parse_args: ""
+      draw_args: ""
+      commit_message: "[Draw] Updated keymap visualization"
       destination: "commit"
-      fail_on_error: ${{ fromJSON(true) }}
+      fail_on_error: false
