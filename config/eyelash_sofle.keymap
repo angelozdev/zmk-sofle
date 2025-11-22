@@ -24,8 +24,6 @@
 
 /* --- CONFIGURACIÓN DEL MOUSE --- */
 /* Ajustes de sensibilidad para el trackball y scroll */
-&mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
-&msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
     acceleration-exponent = <1>;      // Aceleración lineal
@@ -143,7 +141,7 @@
 &trans      &trans      &trans      &trans      &trans      &trans          &trans          &kp HOME  &kp PG_DN &kp PG_UP  &kp END     &trans       &kp F12
 &trans      &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &trans          &trans          &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT   &trans       &trans
 &trans      &kp LC(Z)   &kp LC(Y)   &trans      &trans      &trans          &trans          &mkp LCLK &mkp MCLK &mkp RCLK  &trans      &trans       &trans
-&trans      &trans      &trans      &trans      &trans      &trans          &trans          &kp LC(LEFT) &kp LC(RIGHT) &mo ADJ &trans  &trans       &trans
+&trans      &trans      &trans      &trans      &trans      &trans          &trans          &kp LC(LEFT) &kp LC(RIGHT) &mo ADJ &trans  &trans
             >;
         };
 
