@@ -93,6 +93,22 @@
             key-positions = <35 36>;
             bindings = <&kp RET>;
         };
+
+        /* ; + ' = COLON */
+        /* Acceso directo a : para Vim command mode (:w, :q, :s, etc.) */
+        combo_colon {
+            timeout-ms = <50>;
+            key-positions = <37 38>;
+            bindings = <&kp COLON>;
+        };
+
+        /* D + F = TAB */
+        /* Indentación rápida sin mover la mano del home row */
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <29 30>;
+            bindings = <&kp TAB>;
+        };
     };
 
     /* Configuración del Encoder (Perilla) para Scroll */
@@ -142,32 +158,36 @@
          * - Mano Derecha: Flechas estilo Vim (HJKL) en la posición de reposo.
          * - Mouse: Botones y movimiento en la fila inferior/central.
          * - Teclas F: F1-F12 distribuidas en la fila superior y lateral.
-         * - Word Motion: Ctrl+Left/Right para saltar palabras (fila inferior derecha).
+         * - Word Motion: Alt+Left/Right para saltar palabras en macOS (fila inferior derecha).
          */
         nav_layer {
             label = "NAV";
             bindings = <
 &trans      &kp F1      &kp F2      &kp F3      &kp F4      &kp F5          &kp C_VOL_UP    &kp F6    &kp F7    &kp F8     &kp F9      &kp F10      &kp F11
 &trans      &trans      &trans      &trans      &trans      &trans          &kp C_VOL_DN    &kp HOME  &kp PG_DN &kp PG_UP  &kp END     &trans       &kp F12
-&trans      &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &trans          &kp C_PREV      &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT   &trans       &trans
-&trans      &kp LC(Z)   &kp LC(Y)   &trans      &trans      &trans          &kp C_NEXT      &mkp LCLK &mkp MCLK &mkp RCLK  &trans      &trans       &trans
-&trans      &trans      &trans      &trans      &trans      &trans          &kp C_PP        &kp LC(LEFT) &kp LC(RIGHT) &mo ADJ &trans  &trans
+&trans      &kp LCTRL   &kp LALT    &kp LGUI    &kp LSHFT   &trans          &kp C_PREV      &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT   &trans       &trans
+&trans      &kp LG(Z)   &kp LG(LS(Z)) &trans    &trans      &trans          &kp C_NEXT      &mkp LCLK &mkp MCLK &mkp RCLK  &trans      &trans       &trans
+&trans      &trans      &trans      &trans      &trans      &trans          &kp C_PP        &kp LA(LEFT) &kp LA(RIGHT) &mo ADJ &trans  &trans
             >;
         };
 
         /*
          * CAPA 2: SYM (Símbolos y Números)
-         * - Mano Izquierda: Sticky Mods (Shift, Ctrl, Alt, Gui) para combinaciones rápidas.
-         * - Mano Derecha: Numpad completo (789, 456, 123, 0) para entrada de datos.
-         * - Símbolos: Caracteres comunes de programación accesibles.
+         * - Mano Izquierda: Símbolos agrupados por tipo.
+         *   - Fila 0: ~ ! @ # $ %
+         *   - Fila 1: ` < > { } &
+         *   - Fila 2: Sticky Mods orden CAGS (Ctrl-Alt-Gui-Shift) para macOS
+         *   - Fila 3: [ ] ( ) ? (brackets como inward rolls)
+         * - Mano Derecha: Numpad puro (789, 456, 123, 0).
+         * - $ y ^ accesibles para Vim (end/start of line).
          */
         sym_layer {
             label = "SYM";
             bindings = <
-&kp TILDE   &kp CARET   &kp PIPE    &kp BSLH    &kp GRAVE   &trans          &trans          &kp STAR   &kp N7    &kp N8     &kp N9     &kp KP_MINUS &kp UNDER
-&trans      &kp LBRC    &kp RBRC    &kp LPAR    &kp RPAR    &kp AMPS        &trans          &kp PLUS   &kp N4    &kp N5     &kp N6     &kp KP_PLUS  &kp EQUAL
-&trans      &sk LGUI    &sk LALT    &sk LCTRL   &sk LSHFT   &kp PRCNT       &trans          &kp MINUS  &kp N1    &kp N2     &kp N3     &kp KP_ENTER &trans
-&trans      &kp LBKT    &kp RBKT    &kp LT      &kp GT      &kp QMARK       &trans          &kp FSLH   &kp N0    &kp COMMA  &kp DOT    &trans       &trans
+&kp TILDE   &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &trans          &kp CARET  &kp N7    &kp N8     &kp N9     &kp MINUS    &kp UNDER
+&kp GRAVE   &kp LT      &kp GT      &kp LBRC    &kp RBRC    &kp AMPS        &trans          &kp PLUS   &kp N4    &kp N5     &kp N6     &kp STAR     &kp EQUAL
+&trans      &sk LCTRL   &sk LALT    &sk LGUI    &sk LSHFT   &kp PIPE        &trans          &kp FSLH   &kp N1    &kp N2     &kp N3     &kp KP_ENTER &trans
+&trans      &kp LBKT    &kp RBKT    &kp LPAR    &kp RPAR    &kp QMARK       &trans          &kp DOT    &kp N0    &kp COMMA  &kp BSPC   &trans       &trans
 &trans      &mo ADJ     &trans      &trans      &trans      &trans          &trans          &trans     &trans    &trans     &trans     &trans
             >;
         };
