@@ -19,7 +19,7 @@
 /* --- DEFINICIÓN DE CAPAS --- */
 #define BASE 0  // Capa base (QWERTY)
 #define NAV  1  // Navegación (Flechas, Mouse, F-Keys)
-#define SYM  2  // Símbolos y Numpad
+#define SYM  2  // Símbolos
 #define ADJ  3  // Ajustes del teclado (RGB, BT)
 
 /* --- CONFIGURACIÓN DEL MOUSE --- */
@@ -172,22 +172,23 @@
         };
 
         /*
-         * CAPA 2: SYM (Símbolos y Números)
+         * CAPA 2: SYM (Símbolos)
          * - Mano Izquierda: Símbolos agrupados por tipo.
          *   - Fila 0: ~ ! @ # $ %
          *   - Fila 1: ` < > { } &
-         *   - Fila 2: Sticky Mods orden CAGS (Ctrl-Alt-Gui-Shift) para macOS
-         *   - Fila 3: [ ] ( ) ? (brackets como inward rolls)
-         * - Mano Derecha: Numpad puro (789, 456, 123, 0).
-         * - $ y ^ accesibles para Vim (end/start of line).
+         *   - Fila 2: Sticky Mods CAGS (Ctrl-Alt-Gui-Shift)
+         *   - Fila 3: [ ] ( ) ?
+         * - Mano Derecha: 6 símbolos frecuentes en home row.
+         *   - Home: _ - = + * ^
+         *   - Resto: &trans (pasa a BASE)
          */
         sym_layer {
             label = "SYM";
             bindings = <
-&kp TILDE   &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &trans          &kp CARET  &kp N7    &kp N8     &kp N9     &kp MINUS    &kp UNDER
-&kp GRAVE   &kp LT      &kp GT      &kp LBRC    &kp RBRC    &kp AMPS        &trans          &kp PLUS   &kp N4    &kp N5     &kp N6     &kp STAR     &kp EQUAL
-&trans      &sk LCTRL   &sk LALT    &sk LGUI    &sk LSHFT   &kp PIPE        &trans          &kp FSLH   &kp N1    &kp N2     &kp N3     &kp KP_ENTER &trans
-&trans      &kp LBKT    &kp RBKT    &kp LPAR    &kp RPAR    &kp QMARK       &trans          &kp DOT    &kp N0    &kp COMMA  &kp BSPC   &trans       &trans
+&kp TILDE   &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &trans          &trans     &trans    &trans     &trans     &trans       &trans
+&kp GRAVE   &kp LT      &kp GT      &kp LBRC    &kp RBRC    &kp AMPS        &trans          &trans     &trans    &trans     &trans     &trans       &trans
+&trans      &sk LCTRL   &sk LALT    &sk LGUI    &sk LSHFT   &kp PIPE        &trans          &kp UNDER  &kp MINUS &kp EQUAL  &kp PLUS   &kp STAR     &kp CARET
+&trans      &kp LBKT    &kp RBKT    &kp LPAR    &kp RPAR    &kp QMARK       &trans          &trans     &trans    &trans     &trans     &trans       &trans
 &trans      &mo ADJ     &trans      &trans      &trans      &trans          &trans          &trans     &trans    &trans     &trans     &trans
             >;
         };
