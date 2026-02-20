@@ -7,7 +7,7 @@ layers:
   - {t: '3', s: '#'}
   - {t: '4', s: $}
   - {t: '5', s: '%'}
-  - $$mdi:pan-up$$
+  - $$mdi:arrow-up-bold$$
   - {t: '6', s: ^}
   - {t: '7', s: '&'}
   - {t: '8', s: '*'}
@@ -20,7 +20,7 @@ layers:
   - E
   - R
   - T
-  - $$mdi:pan-down$$
+  - $$mdi:arrow-down-bold$$
   - Y
   - U
   - I
@@ -33,7 +33,7 @@ layers:
   - D
   - F
   - G
-  - $$mdi:pan-left$$
+  - $$mdi:arrow-left-bold$$
   - H
   - J
   - K
@@ -46,7 +46,7 @@ layers:
   - C
   - V
   - B
-  - $$mdi:pan-right$$
+  - $$mdi:arrow-right-bold$$
   - N
   - M
   - {t: ',', s: <}
